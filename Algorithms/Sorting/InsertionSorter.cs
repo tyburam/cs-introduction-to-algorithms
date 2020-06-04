@@ -8,6 +8,11 @@ namespace Algorithms.Sorting
     {
         public IEnumerable<T> Sort(IEnumerable<T> collection)
         {
+            if (collection.Count() <= 1)
+            {
+                return collection;
+            }
+            
             var result = collection.ToList();
             for(var i = 1; i < result.Count; i++)
             {
