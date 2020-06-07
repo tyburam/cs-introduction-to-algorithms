@@ -62,5 +62,10 @@ namespace Algorithms.Sorting
             }
             return result;
         }
+
+        public void SortInPlace(ref IEnumerable<T> collection)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

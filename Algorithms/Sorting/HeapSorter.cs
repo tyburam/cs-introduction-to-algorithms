@@ -31,6 +31,11 @@ namespace Algorithms.Sorting
             return maxHeap;
         }
 
+        public void SortInPlace(ref IEnumerable<T> collection)
+        {
+            throw new NotImplementedException();
+        }
+
         private T[] BuildMaxHeap(IEnumerable<T> collection, int length, int heapSize)
         {
             var heap = (T[])Array.CreateInstance(typeof(T), length);

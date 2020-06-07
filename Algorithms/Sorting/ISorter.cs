@@ -6,5 +6,6 @@ namespace Algorithms.Sorting
     public interface ISorter<T> where T: IComparable
     {
         IEnumerable<T> Sort(IEnumerable<T> collection);
+        void SortInPlace(ref IEnumerable<T> collection);
     }
 }

@@ -8,20 +8,23 @@ namespace Algorithms.Sorting
     {
         public IEnumerable<T> Sort(IEnumerable<T> collection)
         {
-            var result = collection.ToList();
-            for(var i = 0; i < result.Count - 1; i++)
+            IEnumerable<T> result = collection.ToList();
+            SortInPlace(ref result);
+            return result;
+        }
+
+        public void SortInPlace(ref IEnumerable<T> collection)
+        {
+            for(var i = 0; i < collection.Count() - 1; i++)
             {
-                for(var j = i+1; j < result.Count; j++)
+                for(var j = i+1; j < collection.Count(); j++)
                 {
-                    if(result[j].CompareTo(result[i]) < 0)
+                    if(collection.ElementAt(j).CompareTo(collection.ElementAt(i)) < 0)
                     {
-                        var tmp = result[i];
-                        result[i] = result[j];
-                        result[j] = tmp;
+                        collection = collection.SwapValues(i, j);
                     }
                 }
             }
-            return result;
         }
     }
 }
