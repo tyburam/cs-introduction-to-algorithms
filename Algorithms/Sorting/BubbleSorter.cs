@@ -4,16 +4,9 @@ using System.Linq;
 
 namespace Algorithms.Sorting
 {
-    public class BubbleSorter<T> : ISorter<T> where T : IComparable
+    public class BubbleSorter<T> : AbstractSorter<T> where T: IComparable
     {
-        public IEnumerable<T> Sort(IEnumerable<T> collection)
-        {
-            IEnumerable<T> result = collection.ToList();
-            SortInPlace(ref result);
-            return result;
-        }
-
-        public void SortInPlace(ref IEnumerable<T> collection)
+        public override void SortInPlace(ref IEnumerable<T> collection)
         {
             for(var i = 0; i < collection.Count() - 1; i++)
             {

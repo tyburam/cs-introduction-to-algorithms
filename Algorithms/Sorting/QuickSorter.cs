@@ -4,16 +4,9 @@ using System.Linq;
 
 namespace Algorithms.Sorting
 {
-    public class QuickSorter<T> : ISorter<T> where T : IComparable
+    public class QuickSorter<T> : AbstractSorter<T> where T: IComparable
     {
-        public IEnumerable<T> Sort(IEnumerable<T> collection)
-        {
-            IEnumerable<T> result = collection.ToList();
-            SortInPlace(ref result);
-            return result;
-        }
-
-        public void SortInPlace(ref IEnumerable<T> collection)
+        public override void SortInPlace(ref IEnumerable<T> collection)
         {
             QuickSort(ref collection, 0, collection.Count() - 1);
         }
